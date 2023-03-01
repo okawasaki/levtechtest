@@ -29,6 +29,11 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
     
+    public function delete(Post $post)
+    {
+        $post->delete();
+        return redirect('/');
+        
     public function edit(Post $post)
     {
         return view('posts/edit')->with(['post' => $post]);
